@@ -1,0 +1,80 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <package name="default" extends="struts-default">
+        <action name="registrar" class="operaciones.service">
+            <result name="success">/JSP/Exito.jsp</result>
+        </action>
+        <action name="consultar" class="operaciones.service" method="mostrarUsuarios">
+             <result name="success">/JSP/mostrarUsuarios.jsp</result>
+        </action>
+        
+        <action name="deleteProduct" class="operaciones.service" method="eliminarUsuario">
+             <result name="success">/JSP/ExitoDelete.jsp</result>
+        </action>
+        
+        <action name="registrarCustomer" class="operaciones.customersService">
+             <result name="success">/JSP/Exito.jsp</result>
+        </action >
+        
+        <action name="mostrarClientes" class="operaciones.customersService" method="mostrarClientes">
+            <result name="success">/JSP/mostrarClientes.jsp</result>
+        </action>
+        
+        <action name="deleteCustomer" class="operaciones.customersService" method="eliminarUsuario">
+            <result name="success">/JSP/Exito.jsp</result>
+        </action>
+        
+        <action name="editCustomer" class="operaciones.customersService" method="mostrarClientePorId">
+            <result name="success">/JSP/editarCustomer.jsp</result>
+        </action>
+        
+        <action name="updateCustomer" class="operaciones.customersService" method="updateCustomer">
+            <result name="success">/JSP/Exito.jsp</result>
+        </action>
+        
+        <action name="addCity" class="operaciones.cityService">
+            <result name="success">/JSP/Exito.jsp</result>
+        </action>
+        
+        <action name="showCities" class="operaciones.cityService" method="showCities">
+            <result name="success">/JSP/showCities.jsp</result>
+        </action>
+        
+        <action name="deleteCity" class="operaciones.cityService" method="deleteCity">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="editCity" class="operaciones.cityService" method="editCityById" >
+            <result name="success">/JSP/editCity.jsp</result>
+        </action>
+        
+        <action name="updateCity" class="operaciones.cityService" method="updateCity">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="addCountry" class="operaciones.CountryService">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="showCountries" class="operaciones.CountryService" method="showCountries">
+            <result name="success">/JSP/showCountries.jsp</result>
+        </action>
+        
+        <action name="deleteCountry" class="operaciones.CountryService" method="showCountries">
+            <result name="success">/JSP/showCountries.jsp</result>
+        </action>
+        
+        
+        
+        
+        
+        
+        
+        
+   
+    </package>
+</struts>
