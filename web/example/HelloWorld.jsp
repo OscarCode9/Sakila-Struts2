@@ -17,7 +17,7 @@
                 
             </li>
             <li>
-                <a href="JSP/agregarCustomer.jsp">Agregar cliente</a>
+                <a href="http://localhost:8080/sakilaStruc/JSP/agregarCustomer.jsp">Agregar cliente</a>
             </li>
             
             <li>
@@ -25,16 +25,26 @@
             </li>
             
             <li>
-                <a href="JSP/addCity.jsp">Agregar ciudad</a>
+                <a href="http://localhost:8080/sakilaStruc/JSP/addCity.jsp">Agregar ciudad</a>
+            </li>
+
+            <li>
+                <a href="http://localhost:8080/sakilaStruc/JSP/agregarAddress.jsp">Agregar address</a>
             </li>
             
             <li>
-                <a href="JSP/addCountry.jsp">Agregar Pais</a>
+                <a href="http://localhost:8080/sakilaStruc/JSP/addCountry.jsp">Agregar Pais</a>
             </li>
             
             <li>
                 <a href="showCountries.action">Mostrar countries</a>
             </li>
+
+            <li>
+                <a href="showAddresses.action">Mostrar Addresses</a>
+            </li>
+
+            
 
             <li>
                 <s:url id="url" action="HelloWorld">

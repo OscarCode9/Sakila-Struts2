@@ -64,17 +64,47 @@
             <result name="success">/JSP/showCountries.jsp</result>
         </action>
         
-        <action name="deleteCountry" class="operaciones.CountryService" method="showCountries">
-            <result name="success">/JSP/showCountries.jsp</result>
+        <action name="deleteCountry" class="operaciones.CountryService" method="deleteCountry">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="editCountry" class="operaciones.CountryService" method="editCountryById">
+            <result name="success">/JSP/editCountry.jsp</result>
         </action>
         
         
         
+        <action name="updateCountry" class="operaciones.CountryService" method="updateCountry">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+
+        <action name="registrarAdress" class="operaciones.AdressService" >
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+
+        <action name="showAddresses" class="operaciones.AdressService" method="showAddresses" >
+            <result name="success">/JSP/showAddress.jsp</result>
+        </action>
+
+
+        <action name="deleteAddress" class="operaciones.AdressService" method="deleteAddress">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+
+         <action name="editAddress" class="operaciones.AdressService" method="editAddressById">
+            <result name="success">/JSP/editAddress.jsp</result>
+        </action>
+
+        <action name="updateAddress" class="operaciones.AdressService" method="updateAddress">
+            <result name="success">/example/HelloWorld.jsp</result>
+        </action>
+
+        
+
+
+        
+
         
         
-        
-        
-        
-   
     </package>
 </struts>

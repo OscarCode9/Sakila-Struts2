@@ -1,8 +1,4 @@
-<%-- 
-    Document   : mostrarUsuarios
-    Created on : Apr 9, 2018, 5:05:51 PM
-    Author     : oscarcode
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
@@ -32,8 +28,8 @@
                         <td><s:property value="country"></s:property></td>
                         
                         
-                        <td><a href="editCountry.action?id=<s:property value="city_id"/>">Edit</a></td>
-                        <td><a href="deleteCountry.action?id=<s:property value="city_id"/>">Delete</a></td>
+                        <td><a href="editCountry.action?id=<s:property value="country_id"/>">Edit</a></td>
+                        <td><a href="deleteCountry.action?id=<s:property value="country_id"/>">Delete</a></td>
                     </tr>
 
                 </s:iterator>

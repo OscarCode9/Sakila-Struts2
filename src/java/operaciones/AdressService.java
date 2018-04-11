@@ -5,11 +5,11 @@
  */
 package operaciones;
 
-import bean.Country;
+import bean.Address;
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionContext;
-import dao.CountryDAO;
+import dao.AddressDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,22 +20,25 @@ import org.apache.struts2.ServletActionContext;
  *
  * @author oscarcode
  */
-public class CountryService {
+public class AdressService {
+    Address add = new Address();
 
-    Country country = new Country();
-
-    public Country getCountry() {
-        return country;
+    public Address getAdd() {
+        return add;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setAdd(Address add) {
+        this.add = add;
     }
+
+    
 
     public String execute() throws SQLException, ClassNotFoundException {
-
-        CountryDAO ad = new CountryDAO();
-        boolean isInsert = ad.insert(country);
+        
+        
+        AddressDAO ad = new AddressDAO();
+        
+        boolean isInsert = ad.insert(add);
 
         if (isInsert) {
             return SUCCESS;
@@ -46,46 +49,57 @@ public class CountryService {
 
     }
     
-    List<Country> Countries = new ArrayList<Country>();
+    List<Address> addresses = new ArrayList<Address>();
 
-    public String showCountries() throws SQLException, ClassNotFoundException {
+    public String showAddresses() throws SQLException, ClassNotFoundException {
 
-        CountryDAO ad = new CountryDAO();
-        Countries = ad.showCountries();
+        AddressDAO ad = new AddressDAO();
+        addresses  = ad.showAddress();
         return SUCCESS;
 
     }
 
-    public void setCountries(List<Country> Countries) {
-        this.Countries = Countries;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public List<Country> getCountries() {
-        return Countries;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
     
-    public String deleteCountry() throws SQLException, ClassNotFoundException {
+    
+
+    
+
+    
+    
+    public String deleteAddress() throws SQLException, ClassNotFoundException {
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         int id = Integer.parseInt(request.getParameter("id"));
-        CountryDAO ad = new CountryDAO();
+        
+        AddressDAO ad = new AddressDAO();
+        
         boolean eliminar = ad.eliminar(id);
+        
         return SUCCESS;
     }
     
-    public String editCountryById() throws SQLException, ClassNotFoundException {
+    public String editAddressById() throws SQLException, ClassNotFoundException {
         
         HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         int id = Integer.parseInt(request.getParameter("id"));
-        CountryDAO ad = new CountryDAO();
-        country  = ad.countryById(id);
+        
+        AddressDAO ad = new AddressDAO();
+        add  = ad.addressById(id);
         return SUCCESS;
 
     }
     
-    public String updateCountry() throws SQLException, ClassNotFoundException{
+    public String updateAddress() throws SQLException, ClassNotFoundException{
          
-        CountryDAO ad = new CountryDAO();
-        boolean isInsert = ad.updateCity(country);
+        AddressDAO ad = new AddressDAO();
+        
+        boolean isInsert = ad.updateCity(add);
 
         if (isInsert) {
             return SUCCESS;
@@ -96,6 +110,4 @@ public class CountryService {
          
      }
     
-    
-
 }
